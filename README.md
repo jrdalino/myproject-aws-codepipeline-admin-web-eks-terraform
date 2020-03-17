@@ -1,4 +1,4 @@
-# Terraform module to provision a CI/CD Pipeline using AWS Managed Services
+# Terraform module to provision a CI/CD Pipeline using AWS Managed Services (React Web Application)
 
 ## This creates the following resources:
 - CodeCommit
@@ -31,28 +31,10 @@ $ terraform init
 $ terraform plan
 $ terraform apply
 ```
-- Clone empty repository. Make sure CodeCommit Git credentials have bene configured. Note: New repositories are **not** created with their default branch. Once the module has ran you must clone the repository, add files, commit changes locally and then push to initialize the repository.
-```
-$ cd ~/environment
-$ git clone https://git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/myproject-webapp-service && cd ~/environment/myproject-webapp-service
-```
+- Note: New repositories are **not** created with their default branch. Once the module has ran you must clone the repository, add files, commit changes locally and then push to initialize the repository.
 
-- Copy code from Github repo to CodeCommit repo
-```
-$ rsync -rv --exclude=.git ~/environment/bp-react-aws-auth/ ~/environment/myproject-webapp-service/
-```
-- Push Code to CodeCommit to invoke CodePipeline
-```
-$ cd ~/environment/myproject-webapp-service
-$ git add .
-$ git commit -m "Initial Commit"
-$ git push origin master
-```
-- Deploy Kubernetes Service
-```
-$ cd ~/environment/myproject-webapp-service/kubernetes
-$ kubectl apply -f service.yml
-```
+## Deploy
+- Clone empty CodeCommit repository and copy code from https://github.com/jrdalino/myproject-webapp-service-react Note: Make sure CodeCommit Git credentials have been configured. 
 
 ## (Optional) Cleanup
 ```

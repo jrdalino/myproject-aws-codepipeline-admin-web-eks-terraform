@@ -1,6 +1,5 @@
 # General
 aws_region  = "ap-southeast-2"
-aws_profile = "leon.tanner@excelian.com"
 aws_account = "222337787619"
 
 # CodeCommit Repository
@@ -23,4 +22,4 @@ codepipeline_service_role_policy_name = "myproject-webapp-service-codepipeline-s
 codepipeline_pipeline_name            = "myproject-webapp-service-codepipeline"
 
 # Lambda
-lambda_function_name = "myproject-customer-service-lambda"
+lambda_function_name = "deploy-ecr-to-eks-nodejs"

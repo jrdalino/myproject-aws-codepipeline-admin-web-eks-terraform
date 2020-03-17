@@ -89,8 +89,7 @@ resource "aws_codebuild_project" "build_project" {
   # Environment
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    # image           = "aws/codebuild/standard:3.0" # use this for java
-    image           = "aws/codebuild/python:3.5.2"    
+    image           = "aws/codebuild/python:3.5.2"
     type            = "LINUX_CONTAINER"
     privileged_mode = "true"
 
